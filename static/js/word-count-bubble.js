@@ -1,14 +1,14 @@
-var wordData = {};
-
-d3.queue()
-    .defer(d3.csv, "../../winereviews/word_count_stats/500")
-    .await(analyze);
-
-function analyze(error, words) {
-    if(error) { console.log(error); }
-    wordData = words;
-    initializeWordCount(initNum);
-}
+// var wordData = {};
+//
+// d3.queue()
+//     .defer(d3.csv, "../../winereviews/word_count_stats/500")
+//     .await(analyze);
+//
+// function analyze(error, words) {
+//     if(error) { console.log(error); }
+//     wordData = words;
+//     initializeWordCount(initNum);
+// }
 
 function initializeWordCount (number) {
 

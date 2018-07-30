@@ -1,15 +1,15 @@
-var expData = {};
-
-d3.queue()
-    // .defer(d3.csv, "../../winereviews/word_count_stats_rating_hi/500")
-    .defer(d3.csv, "../../static/data/word_count_stats_expensive.csv")
-    .await(analyzeExp);
-
-function analyzeExp(error, words) {
-    if(error) { console.log(error); }
-    expData = words;
-    initializeWordCountExp(initNum);
-}
+// var expData = {};
+//
+// d3.queue()
+//     // .defer(d3.csv, "../../winereviews/word_count_stats_rating_hi/500")
+//     .defer(d3.csv, "../../static/data/word_count_stats_expensive.csv")
+//     .await(analyzeExp);
+//
+// function analyzeExp(error, words) {
+//     if(error) { console.log(error); }
+//     expData = words;
+//     initializeWordCountExp(initNum);
+// }
 
 // set the dimensions and margins of the graph
 var marginSvgExp = {top: 30, right: 20, bottom: 80, left: 40},
@@ -148,7 +148,6 @@ function initializeWordCountExp (number) {
     var top5data = expData.slice(0, 5);
     
     for (var i = 0; i < top5data.length; i++) {
-        console.log(top5data[i]);
         svgExp.select(".top5")
             .append("text")
             .text(top5data[i].id)
