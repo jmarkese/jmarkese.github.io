@@ -181,16 +181,22 @@
     margin: 0 auto;
   }
 
+  .grid.grid2 {
+      padding-top: 0px;
+      height: 1000px;
+  }
+
   .grid {
+      padding-top: 50px;
     font-weight:100;
-    font-size:.8em;
+    font-size:.9em;
     line-height:1.6em;
     color:#333;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-auto-rows: 2em;
     grid-gap: 1.2em;
-    height: 1200px;
+    height: 500px;
 
   }
   
@@ -309,64 +315,69 @@
   <svg id='slider' width="1024" height="50"></svg>
 </div>
 
+    <div class="grid">
 
-<h3>About This Vizualization</h3>
-<div class="grid">
-  <div>
-      <strong>Introduction</strong>
-      <p>
-      The language of describing wines is very rich and colorful. Wine tasters find small nuances in the flavors and qualities of wines and describe them in such creative and dynamic language that one wonders if the world of winemaking and tasting is a completely separate realm from reality where small differences are multiplied and exaggerated. A world filled with a bounty of foods and fruits encased in flowing crisp fluids or smoky full-bodied syrups.
-      </p>
-      <p>
-      Follow us on a “Martini-Glass” style journey through the language of wine reviews using a dataset containing 130,000 reviews that describe and rate wines from around the world. Using the MetaPy library the wine reviews have been processed to analyze only significant words using a stop filter, and the words have been related to their root word using Stemming. For example, the words “power”, “powers”, and “powerful” are all related to their root word “power”. Each root word is then represented by its most frequent usage which in this case is “powerful”.
-      </p>
-      <p>
-          With this processed collection of reviews there are 3 scenes consisting of 3 parameters (high rating, low rating, and price) which are triggered by buttons in the site header and in the commentary headers. Each scene is indicated by chart color as well as by chart and interface labels. Persisting through each scene is a familiar interface and commentary copy that guides the user through each dataset. There is also a persistent bubble chart containing the most commonly used words as a reference point. Using the slider interface, you can also trigger the dataset size of 25 words to expand to 250 words which is an additional parameter for the number of records shown. This parameter affects all underlying chart data and labels. Each point in the bar charts and bubble chart has additional annotations referring to additional data about a specific word.
-      <p>
-      <p>
-        The annotations are cleared by mouseout events on the data points in the charts, as well as by triggereing scene changes with the colored scene change buttons. The user is made aware of these triggers by way of familliar design elements and use of a unified color scheme. Additionally, using a consistent layout with each scene change and applying design decisions to put emphasis on the hierarchy of specific items, creating a cohesive layout and harmonious design.
-      </p>
-      <p>
-
-          Data Source:<br />
-          <a href="https://www.kaggle.com/zynicide/wine-reviews" target="_blank">www.kaggle.com/zynicide/wine-reviews</a>
-      </p>
-
-  </div>
-  <div>
-      <span id="hi_heading"
-            class='changeChartButton '
-            data-chartId="#bar_hi">Highest Rated Wines</span>
-      <p>
-          The highest rated wines scene consists of the words used in the top 100 best rated wines from the source Kaggle data. Looking at the highly rated reviews, the annotated top five words are wine, tannins, fruit, years, and flavors. Among these top 5 only common words with the low rated wines is “wine” and “flavors”, and with the most expensive wines “wine”, “tannins”, and “fruit” are the common words; however, expanding into the top 25, you can see many other words in common. This set is similar as the expensive wine set, in that there are many grandiose words listed. Words such as great, complex, beautiful, powerful among others. The average rating for these words is 88.5 points.
-      </p>
-      <p>The parameters in this scene are the number of records 1-250 triggered by user interaction with the slider, and the 100 highest rated wines dataset controlled by triggering the blue scene buttons.</p>
-  </div>
-  <div>
-      <span id="lo_heading"
-            class='changeChartButton '
-            data-chartId="#bar_lo">Lowest Rated Wines</span>
-      <p>
-          The annotated top five words among the worst 100 rated wines are flavors, wine, aromas, finish, and tastes. It is interesting to note that “flavors” occurred more frequently that “wine” which was most frequent among the highest rated and most expensive sets of data. The average rating of the top 25 words for the low rated wines is 86.1 which is a little over 2 points lower that the highly rated wines. Some very colorful descriptions for the wines in this set show up among the top 25 such as sour, smells, harsh, green, flat, and bitter none of which sound very appetizing when describing a wine.
-      </p>
-      <p>The parameters in this scene are the number of records 1-250 triggered by user interaction with the slider, and the 100 lowest rated wines dataset controlled by triggering the red scene buttons.</p>
-  </div>
-  <div>
-      <span id="exp_heading"
-            class='changeChartButton '
-            data-chartId="#bar_exp">Most Expensive Wines</span>
-      <p>
-          The annotated  top five words among the 100 most expensive wines are wine, fruit, drink, tannins, and acidity. The word usage leans towards more savory flavors where you see words such as smoky, spice, wood, and herb. Age is also a theme among the descriptions are references to a wines maturity, age, and vintage are used. Luxurious sounding words such as elegant, opulent, velvet, generous, and fine also show up more frequently. Among the top 25 the range of average prices is between $644 for “spice” on the low end and $1020 on the high end for the word “ripe” which are quite pricy on both ends of the spectrum.
-      </p>
-      <p>The parameters in this scene are the number of records 1-250 triggered by user interaction with the slider, and the 100 most expensive wines dataset controlled by triggering the green scene buttons.</p>
-  </div>
-  <div></div>
-</div>
-
-
-
-
+      <div>
+          <span id="hi_heading"
+                class='changeChartButton '
+                data-chartId="#bar_hi">Highest Rated Wines</span>
+          <p>
+              The highest rated wines scene consists of the words used in the top 100 best rated wines from the source Kaggle data. Looking at the highly rated reviews, the annotated top five words are wine, tannins, fruit, years, and flavors. Among these top 5 only common words with the low rated wines is “wine” and “flavors”, and with the most expensive wines “wine”, “tannins”, and “fruit” are the common words; however, expanding into the top 25, you can see many other words in common. This set is similar as the expensive wine set, in that there are many grandiose words listed. Words such as great, complex, beautiful, powerful among others. The average rating for these words is 88.5 points.
+          </p>
+          <p>The parameters in this scene are the number of records 1-250 triggered by user interaction with the slider, and the 100 highest rated wines dataset controlled by triggering the blue scene buttons.</p>
+      </div>
+      <div>
+          <span id="lo_heading"
+                class='changeChartButton '
+                data-chartId="#bar_lo">Lowest Rated Wines</span>
+          <p>
+              The annotated top five words among the worst 100 rated wines are flavors, wine, aromas, finish, and tastes. It is interesting to note that “flavors” occurred more frequently that “wine” which was most frequent among the highest rated and most expensive sets of data. The average rating of the top 25 words for the low rated wines is 86.1 which is a little over 2 points lower that the highly rated wines. Some very colorful descriptions for the wines in this set show up among the top 25 such as sour, smells, harsh, green, flat, and bitter none of which sound very appetizing when describing a wine.
+          </p>
+          <p>The parameters in this scene are the number of records 1-250 triggered by user interaction with the slider, and the 100 lowest rated wines dataset controlled by triggering the red scene buttons.</p>
+      </div>
+      <div>
+          <span id="exp_heading"
+                class='changeChartButton '
+                data-chartId="#bar_exp">Most Expensive Wines</span>
+          <p>
+              The annotated  top five words among the 100 most expensive wines are wine, fruit, drink, tannins, and acidity. The word usage leans towards more savory flavors where you see words such as smoky, spice, wood, and herb. Age is also a theme among the descriptions are references to a wines maturity, age, and vintage are used. Luxurious sounding words such as elegant, opulent, velvet, generous, and fine also show up more frequently. Among the top 25 the range of average prices is between $644 for “spice” on the low end and $1020 on the high end for the word “ripe” which are quite pricy on both ends of the spectrum.
+          </p>
+          <p>The parameters in this scene are the number of records 1-250 triggered by user interaction with the slider, and the 100 most expensive wines dataset controlled by triggering the green scene buttons.</p>
+      </div>
     </div>
+
+    <h3>About This Vizualization</h3>
+    <div class="grid grid2">
+        <div>
+            <p>
+                The language of describing wines is very rich and colorful. Wine tasters find small nuances in the flavors and qualities of wines and describe them in such creative and dynamic language that one wonders if the world of winemaking and tasting is a completely separate realm from reality where small differences are multiplied and exaggerated. A world filled with a bounty of foods and fruits encased in flowing crisp fluids or smoky full-bodied syrups.
+            </p>
+            <p>
+                Follow us on a “Martini-Glass” style journey through the language of wine reviews using a dataset containing 130,000 reviews that describe and rate wines from around the world. Using the MetaPy library the wine reviews have been processed to analyze only significant words using a stop filter, and the words have been related to their root word using Stemming. For example, the words “power”, “powers”, and “powerful” are all related to their root word “power”. Each root word is then represented by its most frequent usage which in this case is “powerful”.
+            </p>
+        </div>
+        <div>
+            <p>
+                With this processed collection of reviews there are 3 scenes consisting of 3 parameters (high rating, low rating, and price) which are triggered by buttons in the site header and in the commentary headers. Each scene is indicated by chart color as well as by chart and interface labels.
+            <p>
+            <p>
+                Persisting through each scene is a familiar interface and commentary copy that guides the user through each dataset. There is also a persistent bubble chart containing the most commonly used words as a reference point. Using the slider interface, you can also trigger the dataset size of 25 words to expand to 250 words which is an additional parameter for the number of records shown. This parameter affects all underlying chart data and labels. Each point in the bar charts and bubble chart has additional annotations referring to additional data about a specific word.
+            <p>
+        </div>
+        <div>
+            <p>
+                The annotations are cleared by mouseout events on the data points in the charts, as well as by triggereing scene changes with the colored scene change buttons. The user is made aware of these triggers by way of familliar design elements and use of a unified color scheme. Additionally, using a consistent layout with each scene change and applying design decisions to put emphasis on the hierarchy of specific items, creating a cohesive layout and harmonious design.
+            </p>
+            <p>
+                Data Source:<br />
+                <a href="https://www.kaggle.com/zynicide/wine-reviews" target="_blank">www.kaggle.com/zynicide/wine-reviews</a>
+            </p>
+
+        </div>
+    </div>
+
+
+</div>
       
     
 
