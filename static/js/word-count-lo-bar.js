@@ -1,16 +1,3 @@
-// var loData = {};
-//
-// d3.queue()
-//     // .defer(d3.csv, "../../winereviews/word_count_stats_rating_hi/500")
-//     .defer(d3.csv, "../../static/data/word_count_stats_rating_lo.csv")
-//     .await(analyzeLo);
-//
-// function analyzeLo(error, words) {
-//     if(error) { console.log(error); }
-//     loData = words;
-//     initializeWordCountLo(initNum);
-// }
-
 // set the dimensions and margins of the graph
 var marginSvgHi = {top: 30, right: 20, bottom: 80, left: 40},
     width = barChartWidth - marginSvgHi.left - marginSvgHi.right,

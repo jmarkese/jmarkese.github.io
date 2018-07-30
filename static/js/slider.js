@@ -40,12 +40,17 @@ var handle = slider.insert("circle", ".track-overlay")
     .attr("class", "handle")
     .attr("r", 9);
 
-slider.transition() // Gratuitous intro!
-    .duration(750)
-    .tween("numCount", function() {
-      var i = d3.interpolate(0, initNum);
-      return function(t) { numCount(i(t)); };
-    });
+function initSlider()
+{
+    slider.transition() // Gratuitous intro!
+        .duration(1000)
+        .tween("numCount", function () {
+            var i = d3.interpolate(0, initNum);
+            return function (t) {
+                numCount(i(t));
+            };
+        });
+}
 
 function numCount(h) {
     initNum = Math.round(h);

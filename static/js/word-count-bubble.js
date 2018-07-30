@@ -1,19 +1,6 @@
-// var wordData = {};
-//
-// d3.queue()
-//     .defer(d3.csv, "../../winereviews/word_count_stats/500")
-//     .await(analyze);
-//
-// function analyze(error, words) {
-//     if(error) { console.log(error); }
-//     wordData = words;
-//     initializeWordCount(initNum);
-// }
-
 function initializeWordCount (number) {
 
     var marginBubble = {top: 30, right: null, bottom: null, left: null};
-
 
     dataSlice = wordData.slice(0, number);
     
@@ -33,8 +20,6 @@ function initializeWordCount (number) {
         .attr("preserveAspectRatio", "xMinYMin meet")
         .attr("viewBox", "0 0 400 450")
     ;
-    
-    // var format = d3.format(",d");
     
     var color = d3.scaleOrdinal(d3.schemeCategory20b);
     

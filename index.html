@@ -306,6 +306,7 @@
 <script>
 
 initNum = 25;
+animateFormNum = 1;
 opacityStart = 0.50;
 opacityRollover = 1.0;
 chartText = "#888";
@@ -338,6 +339,8 @@ var tooltip = d3.select("body")
 
 var wordData = {};
 var hiData = {};
+var loData = {};
+var expData = {};
 
 d3.queue()
     .defer(d3.csv, "../../static/data/word_count_overall.csv")
@@ -346,44 +349,18 @@ d3.queue()
     .defer(d3.csv, "../../static/data/word_count_stats_expensive.csv")
     .await(analyze);
 
-//function analyze(error, words) {
-//    if(error) { console.log(error); }
-//    wordData = words;
-//    initializeWordCount(initNum);
-//}
-
-
-//d3.queue()
-// .defer(d3.csv, "../../winereviews/word_count_stats_rating_hi/500")
-//    .await(analyzeHi);
-
 function analyze(error, words1, words2, words3, words4) {
     if(error) { console.log(error); }
     wordData = words1;
     hiData = words2;
     loData = words3;
     expData = words4;
-    console.log(expData);
-    initializeWordCount(initNum);
-    initializeWordCountHi(initNum);
-    initializeWordCountLo(initNum);
-    initializeWordCountExp(initNum);
+    initializeWordCount(animateFormNum);
+    initializeWordCountHi(animateFormNum);
+    initializeWordCountLo(animateFormNum);
+    initializeWordCountExp(animateFormNum);
+    initSlider();
 }
-
-
-var expData = {};
-
-//d3.queue()
-//// .defer(d3.csv, "../../winereviews/word_count_stats_rating_hi/500")
-//    .defer(d3.csv, "../../static/data/word_count_stats_expensive.csv")
-//    .await(analyzeExp);
-
-//function analyzeExp(error, words) {
-//    if(error) { console.log(error); }
-//    expData = words;
-//    initializeWordCountExp(initNum);
-//}
-
 
 
 </script>
